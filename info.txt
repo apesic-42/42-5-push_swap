@@ -1,1 +1,18 @@
 algo : radix
+
+
+fonction utils + :
+
+
+
+//////////////////////////////////////////////////////////////
+
+void print_list(t_element *head)
+{
+	while (head)
+	{
+		printf("List: %c, Value: %d\n", head->list, head->value);
+		head = head->next;
+	}
+}
+//////////////////////////////////////////////////////////////
