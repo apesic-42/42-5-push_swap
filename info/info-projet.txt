@@ -1,0 +1,56 @@
+on utilise radix
+
+
+pour la list, on a 3 objet  :
+
+typedef struct t_value
+{
+	bool	signe; // true = positif, false = negatif
+	int c1;
+	int c2;
+	int c3;
+	int c4;
+	int c5;
+	int c6;
+	int c7;
+	int c8;
+	int c9;
+	int c10;
+}						t_value;
+
+typedef struct t_element
+{
+	char				list;
+	struct t_value		value;
+	struct t_element	*next;
+}						t_element;
+
+typedef struct t_listutil
+{
+	t_element			*head;
+	t_element			*tail;
+	int					size;
+}						t_listutil;
+
+
+
+1. on ne stock pas les nombre sous forme de nombre, on les met dans des struct value
+2. on ne trie pas la liste chainer, elle rest comme ca, on modifie
+les struct "value" associer a chaque element de la liste (on deplace les t_value)
+3. on  pas de list a et b, juste une seul liste et pour chaque element a ou b
+4. le first element de la liste chainer est le dernier element de la list donner par l'utilisateur (celui du bas de la liste)
+	=> "premier" dans le sujet est notre "last"
+
+ordre de trie :
+
+-∞ => +∞
+
+ordre de la liste chainer (du plus petit au plus grand):
+
+first : -∞ => tail : +∞
+
+run du projet :
+
+1. on check si c'est bon
+2. on met la list dans la list chainer
+3. on trie avec radix

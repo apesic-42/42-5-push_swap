@@ -6,39 +6,65 @@
 /*   By: apesic <apesic@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:20:20 by apesic            #+#    #+#             */
-/*   Updated: 2025/01/15 14:55:20 by apesic           ###   ########.fr       */
+/*   Updated: 2025/01/16 18:33:55 by apesic           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# include "./libft/printf/ft_printf.h"
 # include <stdbool.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include "./libft/printf/ft_printf.h"
 
+typedef struct t_value
+{
+	bool	signe; // true = positif, false = negatif
+	bool	list; // true = a, false = b
+	unsigned int c1;
+	unsigned int c2;
+	unsigned int c3;
+	unsigned int c4;
+	unsigned int c5;
+	unsigned int c6;
+	unsigned int c7;
+	unsigned int c8;
+	unsigned int c9;
+	unsigned int c10;
+}						t_value;
 
 typedef struct t_element
 {
-	char			list; // a ou b
-	int 			value; //
+	struct t_value		*value;
 	struct t_element	*next;
 	struct t_element	*prev;
-}					t_element;
+}						t_element;
 
-char *check_init(int ac, char **av);
+typedef struct t_listutil
+{
+	t_element			*head;
+	t_element			*tail;
+	int					size;
+}						t_listutil;
 
-t_element *put_list_in_struct(char *lista);
-t_element *create_element(char list,   int value);
+char					**check_init(int ac, char **av);
 
-	// manipulate
+t_element				*put_list_in_struct(char **av);
+t_element				*create_element(char list, char *value);
+char 					*nb_to_0(char *nb);
+t_listutil				*create_listutil(t_element *first_a);
 
-// utils
-t_element *get_last(t_element *first);
 
+size_t					get_size(t_element *first);
+t_element				*get_prev_l(t_element *element, bool l);
+t_element				*get_next_l(t_element *element, bool l);
 
+t_element 				*manip_sa(t_element *first, t_listutil *listutil);
+t_element 				*manip_sb(t_element *first, t_listutil *listutil);
+t_element 				*manip_ss(t_element *first, t_listutil *listutil);
+
+t_element 				*manip_pa(t_element *first, t_listutil *listutil);
+t_element 				*manip_pb(t_element *first, t_listutil *listutil);
 #endif // FT_H

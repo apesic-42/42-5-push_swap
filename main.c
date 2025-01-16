@@ -4,29 +4,52 @@
 
 
 //////////////////////////////////////////////////////////////
-void print_list(t_element *head)
-{
-	while (head)
-	{
-		printf("List: %c, Value: %d\n", head->list, head->value);
-		head = head->next;
-	}
+// Fonction pour imprimer les détails de t_value
+void print_value(const t_value *v) {
+    printf("Signe: %s\n", v->signe ? "Positif" : "Négatif");
+    printf("Chiffres: %u %u %u %u %u %u %u %u %u %u\n",
+           v->c1, v->c2, v->c3, v->c4, v->c5, v->c6, v->c7, v->c8, v->c9, v->c10);
 }
+
+// Fonction pour imprimer la liste
+void print_list(t_listutil *listutil) {
+	int i = 0;
+    const t_element *current = listutil->head;
+    while (current != NULL) {
+        printf("List: %s\n", current->value->list ? "a" : "b");
+        printf("element : %d\n", i);
+		if (current->value != NULL) {
+            print_value(current->value);
+        } else {
+            printf("No value\n");
+        }
+        current = current->next; // Avancer à l'élément suivant
+		i++;
+        //printf("\n"); // Espacement entre les éléments pour une meilleure lisibilité
+    }
+}
+
 //////////////////////////////////////////////////////////////
 
 int main(int ac, char **av)
 {
-	char *lista;
 	t_element *first_a;
+	t_listutil *listutil;
 
-	ft_printf("start\n"); // start
 	// chech if entries are ok
-	lista = check_init(ac, av);
-	first_a = put_list_in_struct(lista);
+	av = check_init(ac, av);
+	first_a = put_list_in_struct(av);
+	listutil = create_listutil(first_a);
 
-	
 
+	// printf("size : %d\n", listutil->size);
+	// t_element *last = listutil->tail;
+	// print_value(last->value);
 
+	print_list(listutil);
+	printf("\n\n\n\n");
+	manip_sa(first_a, listutil);
+	print_list(listutil);
 }
 
 

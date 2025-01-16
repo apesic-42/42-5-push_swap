@@ -1,0 +1,36 @@
+la base de notre alogo c'ets une doucnle boucle en base 10 (10 tours)
+
+
+list A
+list B
+
+## step 1 (positif):
+
+base =  {9,8,7,6,5,4,3,2,1,0}
+X in base
+
+1. on parcour la list chainer, quand on tombe sur un X on le met dans B
+2. apres on met tous les X en haut de A
+
+
+## step 1 (negatif):
+
+base =  {0,1,2,3,4,5,6,7,8,9}
+X in base
+
+
+1. on parcour la list chainer, quand on tombe sur un X on le met dans B
+2. apres on met tous les X en haut de A
+
+
+
+
+
+
+
+#################################
+
+
+pour deplacer les nombre de la list A dans la liste B
+
+

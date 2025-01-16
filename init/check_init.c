@@ -3,16 +3,16 @@
 
 #include "push_swap.h"
 
-static char *treat_entries(int ac, char **av)
+static char **treat_entries(int ac, char **av)
 {
-	char *lista;
-	lista = av[1];
+	char **lista;
+	lista = av;
 	return (lista);
 }
 
-char *check_init(int ac, char **av)
+char **check_init(int ac, char **av)
 {
-	char *lista;
+	char **lista;
 
 	// check if entries are good
 	lista = treat_entries(ac, av);
