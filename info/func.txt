@@ -17,7 +17,6 @@ void print_value(const t_value *v) {
 void print_list(const t_element *head) {
     const t_element *current = head;
     while (current != NULL) {
-        printf("List: %s\n", current->list ? "a" : "b");
         if (current->value != NULL) {
             print_value(current->value);
         } else {

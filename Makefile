@@ -12,12 +12,12 @@ PRINTF_SRC = $(PRINTF_DIR)libftprintf.a
 
 PUSH_SWAP_DIR = .
 PUSH_SWAP_SRC =		main\
-					manipulate/manipulate_utils\
-					manipulate/manipulate_s\
 					init/transform_init\
 					init/check_init\
 					init/nb_to_0\
-					init/create_listutil
+					init/create_listutil\
+					manipulate/manipulate_utils
+					# manipulate/manipulate_s\
 
 PUSH_SWAP_DS = $(addprefix $(PUSH_SWAP_DIR)/, $(addsuffix .c, $(PUSH_SWAP_SRC)))
 OBJS = $(PUSH_SWAP_DS:.c=.o)

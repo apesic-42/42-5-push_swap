@@ -6,7 +6,7 @@
 /*   By: apesic <apesic@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:20:20 by apesic            #+#    #+#             */
-/*   Updated: 2025/01/16 18:33:55 by apesic           ###   ########.fr       */
+/*   Updated: 2025/01/16 19:20:05 by apesic           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 typedef struct t_value
 {
 	bool	signe; // true = positif, false = negatif
-	bool	list; // true = a, false = b
 	unsigned int c1;
 	unsigned int c2;
 	unsigned int c3;
@@ -54,17 +53,20 @@ char					**check_init(int ac, char **av);
 t_element				*put_list_in_struct(char **av);
 t_element				*create_element(char list, char *value);
 char 					*nb_to_0(char *nb);
-t_listutil				*create_listutil(t_element *first_a);
+t_listutil				*create_listutil_a(t_element *first_a);
+t_listutil 				*create_listutil_b();
 
 
 size_t					get_size(t_element *first);
-t_element				*get_prev_l(t_element *element, bool l);
-t_element				*get_next_l(t_element *element, bool l);
+// t_element				*get_prev_l(t_element *element, bool l);
+// t_element				*get_next_l(t_element *element, bool l);
 
-t_element 				*manip_sa(t_element *first, t_listutil *listutil);
-t_element 				*manip_sb(t_element *first, t_listutil *listutil);
-t_element 				*manip_ss(t_element *first, t_listutil *listutil);
+// t_element 				*manip_sa(t_element *first, t_listutil *listutil);
+// t_element 				*manip_sb(t_element *first, t_listutil *listutil);
+// t_element 				*manip_ss(t_element *first, t_listutil *listutil);
 
-t_element 				*manip_pa(t_element *first, t_listutil *listutil);
-t_element 				*manip_pb(t_element *first, t_listutil *listutil);
+// t_element 				*manip_pa(t_element *first, t_listutil *listutil);
+// t_element 				*manip_pb(t_element *first, t_listutil *listutil);
+
+
 #endif // FT_H

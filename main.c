@@ -16,7 +16,6 @@ void print_list(t_listutil *listutil) {
 	int i = 0;
     const t_element *current = listutil->head;
     while (current != NULL) {
-        printf("List: %s\n", current->value->list ? "a" : "b");
         printf("element : %d\n", i);
 		if (current->value != NULL) {
             print_value(current->value);
@@ -31,25 +30,37 @@ void print_list(t_listutil *listutil) {
 
 //////////////////////////////////////////////////////////////
 
+static void *fail()
+{
+	ft_printf("error");
+	return (NULL);
+}
+
 int main(int ac, char **av)
 {
 	t_element *first_a;
-	t_listutil *listutil;
+	t_listutil *listutil_a;
+	t_listutil *listutil_b;
 
 	// chech if entries are ok
 	av = check_init(ac, av);
 	first_a = put_list_in_struct(av);
-	listutil = create_listutil(first_a);
-
-
+	listutil_a = create_listutil_a(first_a);
+	if (!listutil_a)
+		return (fail());
+	listutil_b = create_listutil_b();
+	if (!listutil_b)
+		return (fail());
+		
+	print_list(listutil_a);
+	printf("\n\n\n\n");
+	print_list(listutil_b);
 	// printf("size : %d\n", listutil->size);
 	// t_element *last = listutil->tail;
 	// print_value(last->value);
 
-	print_list(listutil);
-	printf("\n\n\n\n");
-	manip_sa(first_a, listutil);
-	print_list(listutil);
+	// manip_sa(first_a, listutil);
+	// print_list(listutil);
 }
 
 

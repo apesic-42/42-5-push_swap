@@ -42,7 +42,6 @@ static t_value *create_value(char *value)
 		new_value->signe = false;
 	else
 		new_value->signe = true;
-	new_value->list = true;
 	str = nb_to_0(value);
 	new_value  = c12345(str, new_value);
 	free(str);
