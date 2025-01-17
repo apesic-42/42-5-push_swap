@@ -4,17 +4,17 @@
 
 t_listutil *manip_sa(t_listutil *listutil)
 {
-	t_element *last;
+	t_element *first;
 	t_element *pre_last;
 	t_value	*temp_val;
 
 	ft_printf("sa\n");
-	last = listutil->taila;
-	pre_last = get_prev_l(last);
-	if (last->value && pre_last->value)
+	first = listutil->heada;
+	pre_last = get_next_l(first);
+	if (first->value && pre_last->value)
 	{
-		temp_val = last->value;
-		last->value = pre_last->value;
+		temp_val = first->value;
+		first->value = pre_last->value;
 		pre_last->value = temp_val;
 		return (listutil);
 	}
@@ -23,17 +23,17 @@ t_listutil *manip_sa(t_listutil *listutil)
 
 t_listutil *manip_sb(t_listutil *listutil)
 {
-	t_element *last;
+	t_element *first;
 	t_element *pre_last;
 	t_value	*temp_val;
 
 	ft_printf("sb\n");
-	last = listutil->tailb;
-	pre_last = get_prev_l(last);
-	if (last->value && pre_last->value)
+	first = listutil->headb;
+	pre_last = get_next_l(first);
+	if (first->value && pre_last->value)
 	{
-		temp_val = last->value;
-		last->value = pre_last->value;
+		temp_val = first->value;
+		first->value = pre_last->value;
 		pre_last->value = temp_val;
 		return (listutil);
 	}

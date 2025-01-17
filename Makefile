@@ -20,6 +20,8 @@ PUSH_SWAP_SRC =		main\
 					manipulate/manipulate_utils2\
 					manipulate/manipulate_s\
 					manipulate/manipulate_p\
+					manipulate/manipulate_r\
+					manipulate/manipulate_rr\
 
 PUSH_SWAP_DS = $(addprefix $(PUSH_SWAP_DIR)/, $(addsuffix .c, $(PUSH_SWAP_SRC)))
 OBJS = $(PUSH_SWAP_DS:.c=.o)

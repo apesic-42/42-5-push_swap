@@ -6,7 +6,7 @@
 /*   By: apesic <apesic@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:20:20 by apesic            #+#    #+#             */
-/*   Updated: 2025/01/17 11:53:49 by apesic           ###   ########.fr       */
+/*   Updated: 2025/01/17 15:38:56 by apesic           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,12 +66,17 @@ t_element *get_prev_l(t_element *element);
 t_listutil *manip_sa(t_listutil *listutil);
 t_listutil *manip_sb(t_listutil *listutil);
 t_listutil *manip_ss(t_listutil *listutil);
-t_listutil 				*manip_pb(t_listutil *listutil);
-t_listutil 				*manip_pa(t_listutil *listutil);
+t_listutil *manip_pb(t_listutil *listutil);
+t_listutil *manip_pa(t_listutil *listutil);
+t_listutil *manip_ra(t_listutil *listutil);
+t_listutil 	*manip_rb(t_listutil *listutil);
+t_listutil 	*manip_rr(t_listutil *listutil);
+t_listutil 	*manip_rra(t_listutil *listutil);
 
 
-// t_element 				*manip_pa(t_element *first, t_listutil *listutil);
-// t_element 				*manip_pb(t_element *first, t_listutil *listutil);
+
+
+
 
 
 #endif // FT_H

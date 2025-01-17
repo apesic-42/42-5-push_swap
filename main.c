@@ -73,25 +73,25 @@ int main(int ac, char **av)
 	// printf("size : %d\n", listutil->size);
 	// t_element *last = listutil->tail;
 	// print_value(last->value);
+
 	printf("\n\n\n\n");
 	listutil = manip_sa(listutil);
 	print_list(listutil);
 
 	printf("\n\n\n\n");
 	listutil = manip_pb(listutil);
-	print_list(listutil);
-
-	printf("\n\n\n\n");
+	listutil = manip_pb(listutil);
 	listutil = manip_pb(listutil);
 	print_list(listutil);
 
-	printf("\n\n\n\n");
-	listutil = manip_sb(listutil);
-	print_list(listutil);
+	// printf("\n\n\n\n");
+	// listutil = manip_ra(listutil);
+	// listutil = manip_rb(listutil);
+	// print_list(listutil);
 
-	printf("\n\n\n\n");
-	listutil = manip_pa(listutil);
-	print_list(listutil);
+	// printf("\n\n\n\n");
+	// listutil = manip_rra(listutil);
+	// print_list(listutil);
 }
 
 

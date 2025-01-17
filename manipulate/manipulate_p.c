@@ -2,23 +2,6 @@
 
 #include "push_swap.h"
 
-// t_listutil 				*manip_pa(t_listutil *listutil)
-// {
-// 	t_element *last_a;
-// 	t_element *last_b;
-// 	t_value	*temp_val;
-
-// 	ft_printf("pa\n");
-// 	last_b = listutil->tailb;
-// 	last_a = listutil->taila;
-// 	if (last_b != NULL && last_a != NULL && last_a->value && last_b->value)
-// 	{
-// 		last_b-> = last_a->value;
-// 		last->value = pre_last->value;
-// 		pre_last->value = temp_val;
-// 	}
-// 	return (listutil);
-// }
 
 static void init_listutil(t_element *last_1, t_element *pre_last, t_element *last_2)
 {
@@ -26,28 +9,28 @@ static void init_listutil(t_element *last_1, t_element *pre_last, t_element *las
 			pre_last->next = NULL;
 	if (last_2 != NULL)
 	{
-		last_1->prev = last_2;
-		last_2->next = last_1;
+		last_1->next = last_2;
+		last_2->prev = last_1;
 	}
 }
 
 t_listutil 				*manip_pb(t_listutil *listutil)
 {
-	t_element *last_a;
-	t_element *last_b;
-	t_element *pre_last_a;
+	t_element *first_a;
+	t_element *first_b;
+	t_element *pre_first_a;
 
 	ft_printf("pb\n");
-	last_a = listutil->taila;
-	last_b = listutil->tailb;
-	pre_last_a = get_prev_l(last_a);
-	if (last_a != NULL)
+	first_a = listutil->heada;
+	first_b = listutil->headb;
+	pre_first_a = get_next_l(first_a);
+	if (first_a != NULL)
 	{
-		init_listutil(last_a, pre_last_a, last_b);
-		if (last_b == NULL)
-			listutil->headb = last_a;
-		listutil->taila = pre_last_a;
-		listutil->tailb = last_a;
+		init_listutil(first_a, pre_first_a, first_b);
+		if (first_b == NULL)
+			listutil->headb = first_a;
+		listutil->heada = pre_first_a;
+		listutil->headb = first_a;
 		listutil->sizea --;
 		listutil->sizeb ++;
 	}
