@@ -2,35 +2,53 @@
 
 #include "push_swap.h"
 
-void print_valuee(const t_value *v) {
-    printf("Signe: %s\n", v->signe ? "Positif" : "Négatif");
-    printf("Chiffres: %u %u %u %u %u %u %u %u %u %u\n",
-           v->c1, v->c2, v->c3, v->c4, v->c5, v->c6, v->c7, v->c8, v->c9, v->c10);
-}
-
 
 
 
 t_listutil 	*manip_rra(t_listutil *listutil)
 {
-	t_element *last_a;
-	t_element *first_a;
+	t_element *premier_a;
+	t_element *dernier_a;
 	t_element *temp;
 
 	ft_printf("rra\n");
-	last_a = listutil->taila;
-	first_a = listutil->heada;
-	temp = first_a->next;
+	dernier_a = listutil->heada;
+	premier_a = listutil->taila;
+	temp = dernier_a->next;
 
 
-	if (last_a != NULL && first_a != NULL && first_a != last_a)
+	if (premier_a != NULL && dernier_a != NULL && dernier_a != premier_a)
 	{
-		first_a->prev = last_a;
-		last_a->next = first_a;
+		dernier_a->prev = premier_a;
+		premier_a->next = dernier_a;
 		temp->prev = NULL;
-		first_a->next = NULL;
+		dernier_a->next = NULL;
 		listutil->heada= temp;
-		listutil->taila = first_a;
+		listutil->taila = dernier_a;
+	}
+	return (listutil);
+}
+
+t_listutil 	*manip_rrb(t_listutil *listutil)
+{
+	t_element *premier_b;
+	t_element *dernier_b;
+	t_element *temp;
+
+	ft_printf("rrb\n");
+	dernier_b = listutil->headb;
+	premier_b = listutil->tailb;
+	temp = dernier_b->next;
+
+
+	if (premier_b != NULL && dernier_b != NULL && dernier_b != premier_b)
+	{
+		dernier_b->prev = premier_b;
+		premier_b->next = dernier_b;
+		temp->prev = NULL;
+		dernier_b->next = NULL;
+		listutil->headb= temp;
+		listutil->tailb = dernier_b;
 	}
 	return (listutil);
 }

@@ -61,28 +61,27 @@ t_element *create_element(char *value)
 	return (new_element);
 }
 
-t_element *put_list_in_struct(char **av)
+t_element *put_list_in_struct(int ac, char **av)
 {
 	t_element *first_a;
 	t_element *temp_element;
 	t_element *new_element;
-	size_t i;
 
-	i = 1;
-	first_a =  create_element(av[i]);
+
+	first_a =  create_element(av[--ac]);
 	if (!first_a)
 		return NULL;
-	i++;
+	ac--;
 	temp_element = first_a;
-	while (av[i])
+	while (ac > 0)
 	{
-		new_element = create_element(av[i]);
+		new_element = create_element(av[ac]);
 		if (!temp_element)
 			return (clean_exit(new_element));
 		temp_element->next = new_element;
 		new_element->prev = temp_element;
 		temp_element = new_element;
-		i++;
+		ac--;
 	}
 	return (first_a);
 }

@@ -6,7 +6,7 @@
 /*   By: apesic <apesic@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:20:20 by apesic            #+#    #+#             */
-/*   Updated: 2025/01/17 15:38:56 by apesic           ###   ########.fr       */
+/*   Updated: 2025/01/17 19:13:28 by apesic           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ typedef struct t_listutil
 
 char					**check_init(int ac, char **av);
 
-t_element				*put_list_in_struct(char **av);
+t_element				*put_list_in_struct(int ac, char **av);
 t_element				*create_element(char *value);
 char 					*nb_to_0(char *nb);
 t_listutil				*create_listutil(t_element *first_a);
@@ -72,6 +72,8 @@ t_listutil *manip_ra(t_listutil *listutil);
 t_listutil 	*manip_rb(t_listutil *listutil);
 t_listutil 	*manip_rr(t_listutil *listutil);
 t_listutil 	*manip_rra(t_listutil *listutil);
+t_listutil 	*manip_rrb(t_listutil *listutil);
+
 
 
 
