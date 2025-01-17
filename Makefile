@@ -16,8 +16,10 @@ PUSH_SWAP_SRC =		main\
 					init/check_init\
 					init/nb_to_0\
 					init/create_listutil\
-					manipulate/manipulate_utils
-					# manipulate/manipulate_s\
+					manipulate/manipulate_utils\
+					manipulate/manipulate_utils2\
+					manipulate/manipulate_s\
+					manipulate/manipulate_p\
 
 PUSH_SWAP_DS = $(addprefix $(PUSH_SWAP_DIR)/, $(addsuffix .c, $(PUSH_SWAP_SRC)))
 OBJS = $(PUSH_SWAP_DS:.c=.o)
@@ -44,5 +46,14 @@ fclean : clean
 	rm -f $(NAME)
 
 re : fclean all
+
+# en plus
+
+psclean :
+	rm -f $(OBJS)
+	rm -f $(NAME)
+
+psre : psclean all
+
 
 .PHONY: all clean fclean re

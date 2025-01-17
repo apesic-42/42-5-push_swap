@@ -14,7 +14,26 @@ void print_value(const t_value *v) {
 // Fonction pour imprimer la liste
 void print_list(t_listutil *listutil) {
 	int i = 0;
-    const t_element *current = listutil->head;
+	printf("info lists : \n tail a : %d\n tail b : %d\n total : %d\n", listutil->sizea, listutil->sizeb, listutil->sizea + listutil->sizeb);
+    const t_element *current = listutil->heada;
+    if (current == NULL)
+		printf("rien dans cla liste b\n");
+	while (current != NULL) {
+        printf("element : %d\n", i);
+		if (current->value != NULL) {
+            print_value(current->value);
+        } else {
+            printf("No value\n");
+        }
+        current = current->next; // Avancer à l'élément suivant
+		i++;
+        //printf("\n"); // Espacement entre les éléments pour une meilleure lisibilité
+    }
+	printf("\n\n\n\n");
+	i = 0;
+    current = listutil->headb;
+	if (current == NULL)
+		printf("rien dans cla liste b\n");
     while (current != NULL) {
         printf("element : %d\n", i);
 		if (current->value != NULL) {
@@ -30,37 +49,49 @@ void print_list(t_listutil *listutil) {
 
 //////////////////////////////////////////////////////////////
 
-static void *fail()
+static int fail()
 {
 	ft_printf("error");
-	return (NULL);
+	return (-1);
 }
 
 int main(int ac, char **av)
 {
 	t_element *first_a;
-	t_listutil *listutil_a;
-	t_listutil *listutil_b;
+	t_listutil *listutil;
 
 	// chech if entries are ok
 	av = check_init(ac, av);
 	first_a = put_list_in_struct(av);
-	listutil_a = create_listutil_a(first_a);
-	if (!listutil_a)
+	listutil = create_listutil(first_a);
+	if (!listutil)
 		return (fail());
-	listutil_b = create_listutil_b();
-	if (!listutil_b)
-		return (fail());
-		
-	print_list(listutil_a);
-	printf("\n\n\n\n");
-	print_list(listutil_b);
+
+
+	print_list(listutil);
+
 	// printf("size : %d\n", listutil->size);
 	// t_element *last = listutil->tail;
 	// print_value(last->value);
+	printf("\n\n\n\n");
+	listutil = manip_sa(listutil);
+	print_list(listutil);
 
-	// manip_sa(first_a, listutil);
-	// print_list(listutil);
+	printf("\n\n\n\n");
+	listutil = manip_pb(listutil);
+	print_list(listutil);
+
+	printf("\n\n\n\n");
+	listutil = manip_pb(listutil);
+	print_list(listutil);
+
+	printf("\n\n\n\n");
+	listutil = manip_sb(listutil);
+	print_list(listutil);
+
+	printf("\n\n\n\n");
+	listutil = manip_pa(listutil);
+	print_list(listutil);
 }
 
 

@@ -18,16 +18,17 @@ size_t get_size(t_element *first)
 	return (i);
 }
 
-// t_element *get_next_l(t_element *element, bool l)
-// {
-// 	while (element->value->list != l)
-// 		element = element->next;
-// 	return (element);
-// }
+t_element *get_next_l(t_element *element)
+{
+	if (element->next != NULL)
+		element = element->next;
+	return (element);
+}
 
-// t_element *get_prev_l(t_element *element, bool l)
-// {
-// 	while (element->value->list != l)
-// 		element = element->prev;
-// 	return (element);
-// }
+t_element *get_prev_l(t_element *element)
+{
+	if (element->prev != NULL)
+		element = element->prev;
+	return (element);
+}
+

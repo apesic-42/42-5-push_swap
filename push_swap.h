@@ -6,7 +6,7 @@
 /*   By: apesic <apesic@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:20:20 by apesic            #+#    #+#             */
-/*   Updated: 2025/01/16 19:20:05 by apesic           ###   ########.fr       */
+/*   Updated: 2025/01/17 11:53:49 by apesic           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,27 +43,32 @@ typedef struct t_element
 
 typedef struct t_listutil
 {
-	t_element			*head;
-	t_element			*tail;
-	int					size;
+	t_element			*heada;
+	t_element			*taila;
+	int					sizea;
+	t_element			*headb;
+	t_element			*tailb;
+	int					sizeb;
 }						t_listutil;
 
 char					**check_init(int ac, char **av);
 
 t_element				*put_list_in_struct(char **av);
-t_element				*create_element(char list, char *value);
+t_element				*create_element(char *value);
 char 					*nb_to_0(char *nb);
-t_listutil				*create_listutil_a(t_element *first_a);
-t_listutil 				*create_listutil_b();
+t_listutil				*create_listutil(t_element *first_a);
 
 
 size_t					get_size(t_element *first);
-// t_element				*get_prev_l(t_element *element, bool l);
-// t_element				*get_next_l(t_element *element, bool l);
+t_element *get_next_l(t_element *element);
+t_element *get_prev_l(t_element *element);
 
-// t_element 				*manip_sa(t_element *first, t_listutil *listutil);
-// t_element 				*manip_sb(t_element *first, t_listutil *listutil);
-// t_element 				*manip_ss(t_element *first, t_listutil *listutil);
+t_listutil *manip_sa(t_listutil *listutil);
+t_listutil *manip_sb(t_listutil *listutil);
+t_listutil *manip_ss(t_listutil *listutil);
+t_listutil 				*manip_pb(t_listutil *listutil);
+t_listutil 				*manip_pa(t_listutil *listutil);
+
 
 // t_element 				*manip_pa(t_element *first, t_listutil *listutil);
 // t_element 				*manip_pb(t_element *first, t_listutil *listutil);
