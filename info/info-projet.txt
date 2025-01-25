@@ -37,16 +37,8 @@ typedef struct t_listutil
 1. on ne stock pas les nombre sous forme de nombre, on les met dans des struct value
 2. on ne trie pas la liste chainer, elle rest comme ca, on modifie
 les struct "value" associer a chaque element de la liste (on deplace les t_value)  (dans le cas de mouvement inter-list)
-3. le first element de la liste chainer est le dernier element de la list donner par l'utilisateur (celui du bas de la liste)
-	=> "premier" dans le sujet est notre "last"
 
-ordre de trie :
 
--∞ => +∞
-
-ordre de la liste chainer (du plus petit au plus grand):
-
-first : -∞ => tail : +∞
 
 run du projet :
 

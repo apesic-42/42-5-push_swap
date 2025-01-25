@@ -17,11 +17,14 @@ PUSH_SWAP_SRC =		main\
 					init/nb_to_0\
 					init/create_listutil\
 					manipulate/manipulate_utils\
-					manipulate/manipulate_utils2\
 					manipulate/manipulate_s\
 					manipulate/manipulate_p\
 					manipulate/manipulate_r\
 					manipulate/manipulate_rr\
+					algo/sort\
+					algo/sort_util\
+					algo/is_or_not\
+					out/out_normaly\
 
 PUSH_SWAP_DS = $(addprefix $(PUSH_SWAP_DIR)/, $(addsuffix .c, $(PUSH_SWAP_SRC)))
 OBJS = $(PUSH_SWAP_DS:.c=.o)

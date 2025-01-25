@@ -68,69 +68,39 @@ int main(int ac, char **av)
 	if (!listutil)
 		return (fail());
 
+	// print_list(listutil);
 
-	print_list(listutil);
+	// printf("\n\n\n\n");
+	// listutil = manip_sa(listutil);
+	// print_list(listutil);
 
-	// printf("size : %d\n", listutil->size);
-	// t_element *last = listutil->tail;
-	// print_value(last->value);
+	// printf("\n\n\n\n");
+	// listutil = manip_pb(listutil);
+	// listutil = manip_pb(listutil);
+	// listutil = manip_pb(listutil);
+	// print_list(listutil);
 
-	printf("\n\n\n\n");
-	listutil = manip_sa(listutil);
-	print_list(listutil);
-
-	printf("\n\n\n\n");
-	listutil = manip_pb(listutil);
-	listutil = manip_pb(listutil);
-	listutil = manip_pb(listutil);
-	print_list(listutil);
+	// printf("\n\n\n\n");
+	// listutil = manip_sa(listutil);
+	// print_list(listutil);
 
 	// printf("\n\n\n\n");
 	// listutil = manip_pa(listutil);
+	// listutil = manip_pa(listutil);
+	// listutil = manip_pa(listutil);
 	// print_list(listutil);
 
-	printf("\n\n\n\n");
-	listutil = manip_ra(listutil);
-	listutil = manip_rb(listutil);
-	print_list(listutil);
+	listutil = algo_sort(listutil);
 
-	printf("\n\n\n\n");
-	listutil = manip_rra(listutil);
-	listutil = manip_rrb(listutil);
-	print_list(listutil);
+	if (is_sorted_total(listutil) == true)
+		printf("sorted good\n");
 
-	printf("\n\n\n\n");
-	listutil = manip_sa(listutil);
-	print_list(listutil);
+	if (is_sorted_total(listutil) == false)
+		printf("not sorted\n");
+	out_normaly(listutil);
 
-	printf("\n\n\n\n");
-	listutil = manip_pa(listutil);
-	listutil = manip_pa(listutil);
-	listutil = manip_pa(listutil);
-	print_list(listutil);
+
 }
 
 
 
-
-// not mine
-
-// int	main(int ac, char **av)
-// {
-// 	t_stack	*stack_a;
-// 	t_stack	*stack_b;
-// 	int		stack_size;
-
-// 	if (ac < 2)
-// 		return (0);
-// 	if (!is_correct_input(av))
-// 		exit_error(NULL, NULL);
-// 	stack_b = NULL;
-// 	stack_a = fill_stack_values(ac, av);
-// 	stack_size = get_stack_size(stack_a);
-// 	assign_index(stack_a, stack_size + 1);
-// 	push_swap(&stack_a, &stack_b, stack_size);
-// 	free_stack(&stack_a);
-// 	free_stack(&stack_b);
-// 	return (0);
-// }

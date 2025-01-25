@@ -6,7 +6,7 @@
 /*   By: apesic <apesic@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:20:20 by apesic            #+#    #+#             */
-/*   Updated: 2025/01/17 19:13:28 by apesic           ###   ########.fr       */
+/*   Updated: 2025/01/18 13:43:19 by apesic           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,14 @@ t_listutil 	*manip_rr(t_listutil *listutil);
 t_listutil 	*manip_rra(t_listutil *listutil);
 t_listutil 	*manip_rrb(t_listutil *listutil);
 
+
+t_listutil *algo_sort(t_listutil *listutil);
+bool is_sorted_total(t_listutil *listutil);
+int *get_cx(t_value *value, int x);
+
+
+void free_list(t_element *head);
+void out_normaly(t_listutil *listutil);
 
 
 
