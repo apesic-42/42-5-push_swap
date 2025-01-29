@@ -6,7 +6,7 @@
 /*   By: apesic <apesic@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:20:20 by apesic            #+#    #+#             */
-/*   Updated: 2025/01/18 13:43:19 by apesic           ###   ########.fr       */
+/*   Updated: 2025/01/29 14:16:57 by apesic           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,9 @@ t_listutil 	*manip_rrb(t_listutil *listutil);
 
 t_listutil *algo_sort(t_listutil *listutil);
 bool is_sorted_total(t_listutil *listutil);
-int *get_cx(t_value *value, int x);
+bool x_in_list_a(int x, int rang, t_listutil *listutil);
+int get_cx(t_value *value, int x);
+int zero_position(t_value *v);
 
 
 void free_list(t_element *head);

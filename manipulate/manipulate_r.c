@@ -3,9 +3,6 @@
 #include "push_swap.h"
 
 
-
-
-
 t_listutil 	*manip_ra(t_listutil *listutil)
 {
 	t_element *last_a;
