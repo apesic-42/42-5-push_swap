@@ -38,8 +38,8 @@ t_listutil *algo_sort(t_listutil *listutil)
 					// printf("le prev : ");
 					// print_value(firsta->prev->value);
 					if (zero_position(firsta->value) < i)
-
 					{
+					    printf("x : %d verif : %d, y : %d\n", i, get_cx(firsta->value, i), y);
 						if (get_cx(firsta->value, i) == y) // rajouter la verif positif ou negatif ici
 							listutil = manip_pb(listutil);
 						else
@@ -50,10 +50,11 @@ t_listutil *algo_sort(t_listutil *listutil)
 							return (listutil);
 						}
 					}
-					firsta = firsta->prev;
-					//printf("ir\n");
-					//print_value(firsta->value);
+					firsta = listutil->taila;
+					printf("ir\n");
+					print_value(firsta->value);
 				}
+				printf("ici\n");
 				// remettre list b dans a
 
 				while (listutil->sizeb > 0)
