@@ -82,7 +82,8 @@ bool x_in_list_a(int x, int rang, t_listutil *listutil)
     while (current != NULL)
 	{
         if (get_cx(current->value, rang) == x)
-            return (true);
+			if (x != 0 || zero_position(current->value) < rang)
+            	return (true);
         current = current->prev;
     }
 	return (false);
