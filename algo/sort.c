@@ -53,6 +53,10 @@ t_listutil *algo_sort(t_listutil *listutil)
 					firsta = listutil->taila;
 					printf("ir\n");
 					print_value(firsta->value);
+					if (x_in_list_a(y , i, listutil) == true)
+						printf("ok\n");
+					else
+						printf("not ok\n");
 				}
 				printf("ici\n");
 				// remettre list b dans a
