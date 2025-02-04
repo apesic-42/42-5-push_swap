@@ -57,17 +57,18 @@ static int fail()
 
 int main(int ac, char **av)
 {
-	t_element *first_a;
 	t_listutil *listutil;
 
-	// chech if entries are ok
-	av = check_init(ac, av);
-	first_a = put_list_in_struct(ac, av);
-	listutil = create_listutil(first_a);
-	if (!listutil)
-		return (fail());
+	put_list_in_struct(ac, av);
+	// listutil = init_list(ac, av);
+	// if (!listutil)
+	// 	return (fail());
 
-	print_list(listutil);printf("\n\n\n\nletsgo\n\n");
+	// print_list(listutil);
+
+
+
+	//printf("\n\n\n\nletsgo\n\n");
 
 	// printf("\n\n\n\n");
 	// listutil = manip_sa(listutil);
@@ -102,22 +103,19 @@ int main(int ac, char **av)
 	// listutil = manip_pa(listutil);
 	// print_list(listutil);
 
-	listutil = algo_sort(listutil);
+	//listutil = algo_sort(listutil);
 
 
 
-	printf("\n\n\nfinish\n\n");
-	print_list(listutil);
+	//printf("\n\n\nfinish\n\n");
+	//print_list(listutil);
 
 	if (is_sorted_total(listutil) == true)
 		printf("sorted good\n");
 
 	if (is_sorted_total(listutil) == false)
 		printf("not sorted\n");
-	out_normaly(listutil);
+	//out_normaly(listutil);
 
 
 }
-
-
-

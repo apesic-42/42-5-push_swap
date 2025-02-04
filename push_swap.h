@@ -21,17 +21,8 @@
 
 typedef struct t_value
 {
-	bool	signe; // true = positif, false = negatif
-	unsigned int c1;
-	unsigned int c2;
-	unsigned int c3;
-	unsigned int c4;
-	unsigned int c5;
-	unsigned int c6;
-	unsigned int c7;
-	unsigned int c8;
-	unsigned int c9;
-	unsigned int c10;
+    int true_value;
+    unsigned int fake_value;
 }						t_value;
 
 typedef struct t_element
@@ -57,6 +48,7 @@ t_element				*put_list_in_struct(int ac, char **av);
 t_element				*create_element(char *value);
 char 					*nb_to_0(char *nb);
 t_listutil				*create_listutil(t_element *first_a);
+t_listutil              *init_list(int ac,char ** av);
 
 
 size_t					get_size(t_element *first);
@@ -84,6 +76,7 @@ int zero_position(t_value *v);
 
 void free_list(t_element *head);
 void out_normaly(t_listutil *listutil);
+void *clean_exit_init(t_element *first);
 
 
 

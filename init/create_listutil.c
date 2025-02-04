@@ -26,3 +26,17 @@ t_listutil *create_listutil(t_element *first_a)
 	new_listutil->sizeb = 0;
 	return (new_listutil);
 }
+
+
+t_listutil *init_list(int ac,char ** av)
+{
+    t_element *first_a;
+    t_listutil *listutil;
+
+    av = check_init(ac, av);
+    first_a = put_list_in_struct(ac, av);
+    listutil = create_listutil(first_a);
+
+    return (listutil);
+
+}
