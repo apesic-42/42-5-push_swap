@@ -45,10 +45,12 @@ typedef struct t_listutil
 char					**check_init(int ac, char **av);
 
 t_element				*put_list_in_struct(int ac, char **av);
-t_element				*create_element(char *value);
+t_element				*create_element(int true_value);
+t_value *create_value(int true_value);
 char 					*nb_to_0(char *nb);
 t_listutil				*create_listutil(t_element *first_a);
 t_listutil              *init_list(int ac,char ** av);
+t_listutil              *link_cachliste_and_linked_list(t_listutil *listutil, char **av);
 
 
 size_t					get_size(t_element *first);
@@ -67,11 +69,13 @@ t_listutil 	*manip_rra(t_listutil *listutil);
 t_listutil 	*manip_rrb(t_listutil *listutil);
 
 
-t_listutil *algo_sort(t_listutil *listutil);
-bool is_sorted_total(t_listutil *listutil);
-bool x_in_list_a(int x, int rang, t_listutil *listutil);
-int get_cx(t_value *value, int x);
-int zero_position(t_value *v);
+char **cache_sorte(int ac,char** av);
+
+// t_listutil *algo_sort(t_listutil *listutil);
+// bool is_sorted_total(t_listutil *listutil);
+// bool x_in_list_a(int x, int rang, t_listutil *listutil);
+// int get_cx(t_value *value, int x);
+// int zero_position(t_value *v);
 
 
 void free_list(t_element *head);

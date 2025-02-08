@@ -8,7 +8,6 @@ static int get_moor_small(char **av)
 {
 
 }
-
 int get_int_after(int prev, int true, char **av)
 {
     int temp;

@@ -14,8 +14,8 @@ PUSH_SWAP_DIR = .
 PUSH_SWAP_SRC =		main\
 					init/transform_init\
 					init/check_init\
-					init/nb_to_0\
 					init/create_listutil\
+					init/create_entities\
 					manipulate/manipulate_utils\
 					manipulate/manipulate_s\
 					manipulate/manipulate_p\

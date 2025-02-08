@@ -35,7 +35,9 @@ t_listutil *init_list(int ac,char ** av)
 
     av = check_init(ac, av);
     first_a = put_list_in_struct(ac, av);
+    av = cache_sorte(ac, &av[1]);
     listutil = create_listutil(first_a);
+    listutil = link_cachliste_and_linked_list(listutil, av);
 
     return (listutil);
 
