@@ -100,8 +100,8 @@ int main(int ac, char **av) {
 
   listutil = algo_sort(listutil);
 
-  // printf("\n\n\nfinish\n\n");
-  // print_list(listutil);
+  printf("\n\n\nfinish\n\n");
+  print_list(listutil);
 
     if (is_sorted_total(listutil) == true)
     	printf("sorted good\n");
