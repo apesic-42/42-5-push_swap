@@ -41,7 +41,7 @@ t_listutil *link_cachliste_and_linked_list(t_listutil *listutil, char **av)
             i++;
         }
         if (ft_atoi(av[i]) == current->value->true_value)
-            current->value->fake_value = i + 1;
+            current->value->fake_value = i;
         else
             return (NULL);
         current = current->prev;
@@ -53,16 +53,20 @@ t_listutil *link_cachliste_and_linked_list(t_listutil *listutil, char **av)
 t_listutil *get_max_lenght(t_listutil *listutil)
 {
     int stock;
+    int stock_max;
     t_element *current;
 
     stock = 0;
     current = listutil->taila;
+    stock_max = 0;
     while (current != NULL && current->value != NULL)
     {
-        if (ft_strlen(ft_itoa(current->value->fake_value)) > stock)
-            stock = ft_strlen(ft_itoa(current->value->fake_value));
+        if (current->value->fake_value > stock)
+            stock = current->value->fake_value;
         current = current->prev;
     }
-    listutil->max_lenght = stock;
+    while ((stock >> stock_max) != 0)
+		stock_max++;
+    listutil->max_lenght = stock_max;
     return (listutil);
 }

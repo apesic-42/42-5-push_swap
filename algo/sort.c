@@ -10,29 +10,23 @@ t_listutil *algo_sort(t_listutil *listutil)
     int i;
     t_element *firsta;
     int j;
-    int cursur;
+    int size;
 
+    size = listutil->sizea;
     i = 0;
-
     while (i < listutil->max_lenght)
     {
-        cursur = 9;
-        while (cursur >= 0)
+        j = 0;
+        while(j++ < size)
         {
-            j = 0;
-            while(j++ < listutil->sizea)
-            {
-                firsta = listutil->taila;
-                if (ft_itoa(firsta->value->fake_value)[listutil->max_lenght - 1 - i] == cursur + 48)
-    				listutil = manip_pb(listutil);
-    			else
-                    listutil = manip_ra(listutil);
-            }
-            cursur--;
+            firsta = listutil->taila;
+            if (((firsta->value->fake_value >> i) & 1) == 1)
+                listutil = manip_ra(listutil);
+			else
+				listutil = manip_pb(listutil);
         }
         while (listutil->sizeb != 0)
             listutil = manip_pa(listutil);
-        printf("i : %d\n", i);
         i++;
     }
     return (listutil);
