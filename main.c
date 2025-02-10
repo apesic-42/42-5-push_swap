@@ -11,8 +11,8 @@ static void print_value(const t_value *v) {
 // Fonction pour imprimer la liste
 static void print_list(t_listutil *listutil) {
   int i = 0;
-  printf("info lists : \n tail a : %d\n tail b : %d\n total : %d\n",
-         listutil->sizea, listutil->sizeb, listutil->sizea + listutil->sizeb);
+  printf("info lists : \n tail a : %d\n tail b : %d\n total : %d\n max lenght : %d\n",
+         listutil->sizea, listutil->sizeb, listutil->sizea + listutil->sizeb, listutil->max_lenght);
   const t_element *current = listutil->taila;
   if (current == NULL)
     printf("rien dans cla liste a\n");
@@ -98,15 +98,15 @@ int main(int ac, char **av) {
   // listutil = manip_pa(listutil);
   // print_list(listutil);
 
-  // listutil = algo_sort(listutil);
+  listutil = algo_sort(listutil);
 
   // printf("\n\n\nfinish\n\n");
   // print_list(listutil);
 
-  // if (is_sorted_total(listutil) == true)
-  // 	printf("sorted good\n");
+    if (is_sorted_total(listutil) == true)
+    	printf("sorted good\n");
 
-  // if (is_sorted_total(listutil) == false)
-  // 	printf("not sorted\n");
+    if (is_sorted_total(listutil) == false)
+    	printf("not sorted\n");
   // out_normaly(listutil);
 }

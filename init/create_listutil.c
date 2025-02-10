@@ -38,6 +38,7 @@ t_listutil *init_list(int ac,char ** av)
     av = cache_sorte(ac, &av[1]);
     listutil = create_listutil(first_a);
     listutil = link_cachliste_and_linked_list(listutil, av);
+    listutil = get_max_lenght(listutil);
 
     return (listutil);
 

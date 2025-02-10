@@ -40,6 +40,7 @@ typedef struct t_listutil
 	t_element			*headb;
 	t_element			*tailb;
 	int					sizeb;
+	int                 max_lenght;
 }						t_listutil;
 
 char					**check_init(int ac, char **av);
@@ -51,6 +52,7 @@ char 					*nb_to_0(char *nb);
 t_listutil				*create_listutil(t_element *first_a);
 t_listutil              *init_list(int ac,char ** av);
 t_listutil              *link_cachliste_and_linked_list(t_listutil *listutil, char **av);
+t_listutil              *get_max_lenght(t_listutil *listutil);
 
 
 size_t					get_size(t_element *first);
@@ -71,8 +73,8 @@ t_listutil 	*manip_rrb(t_listutil *listutil);
 
 char **cache_sorte(int ac,char** av);
 
-// t_listutil *algo_sort(t_listutil *listutil);
-// bool is_sorted_total(t_listutil *listutil);
+t_listutil *algo_sort(t_listutil *listutil);
+bool is_sorted_total(t_listutil *listutil);
 // bool x_in_list_a(int x, int rang, t_listutil *listutil);
 // int get_cx(t_value *value, int x);
 // int zero_position(t_value *v);

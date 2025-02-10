@@ -1,5 +1,20 @@
 
-// #include "push_swap.h"
+#include "push_swap.h"
+
+
+
+
+t_listutil *algo_sort(t_listutil *listutil)
+{
+    printf("ir\n");
+    return (listutil);
+}
+
+
+
+
+
+
 
 // static void print_value(const t_value *v) {
 //     printf("vrais: %d | fausse : %u\n",
