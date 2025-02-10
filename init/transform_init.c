@@ -47,7 +47,6 @@ char **cache_sorte(int ac, char **liste)
     while (liste[size] != NULL)
         size++;
 
-    printf("size %d \n", size);
 
     i = 0;
     while(i < size + 1)

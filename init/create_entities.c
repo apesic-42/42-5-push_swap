@@ -34,11 +34,14 @@ t_listutil *link_cachliste_and_linked_list(t_listutil *listutil, char **av)
     while (current != NULL)
     {
         i = 0;
-        //printf("value curr : %d, av1 %d\n", current->value->true_value, ft_atoi(av[0]));
-        while (av[i] != NULL && ft_atoi(av[i]) != current->value->true_value )
+        while (av[i] != NULL && current != NULL && current->value != NULL)
+        {
+            if (ft_atoi(av[i]) == current->value->true_value)
+                break;
             i++;
-        if (ft_atoi(av[i]) != current->value->true_value)
-            current->value->fake_value = i;
+        }
+        if (ft_atoi(av[i]) == current->value->true_value)
+            current->value->fake_value = i + 1;
         else
             return (NULL);
         current = current->prev;
