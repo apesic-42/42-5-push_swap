@@ -50,63 +50,24 @@ static void print_list(t_listutil *listutil) {
 //////////////////////////////////////////////////////////////
 
 static int fail() {
-  ft_printf("error");
+  ft_printf("Error\n");
   return (-1);
 }
 
-int main(int ac, char **av) {
-  t_listutil *listutil;
+int main(int ac, char **av)
+{
+    t_listutil *listutil;
 
-  // put_list_in_struct(ac, av);
-  listutil = init_list(ac, av);
-  // if (!listutil)
-  // 	return (fail());
-
-  print_list(listutil);
-
-  // printf("\n\n\n\nletsgo\n\n");
-
-  // printf("\n\n\n\n");
-  // listutil = manip_sa(listutil);
-  // print_list(listutil);
-
-  // printf("\n\n\n\n");
-  // listutil = manip_pb(listutil);
-  // listutil = manip_pb(listutil);
-  // listutil = manip_pb(listutil);
-  // print_list(listutil);
-
-  // printf("\n\n\n\n");
-  // listutil = manip_ra(listutil);
-  // listutil = manip_rb(listutil);
-  // print_list(listutil);
-
-  // printf("\n\n\n\n");
-  // listutil = manip_ra(listutil);
-  // listutil = manip_rrb(listutil);
-  // print_list(listutil);
-  // printf("tail val : ");
-  // print_value(listutil->taila->prev->value);
-
-  // printf("\n\n\n\n");
-  // listutil = manip_sa(listutil);
-  // print_list(listutil);
-
-  // printf("\n\n\n\n");
-  // listutil = manip_pa(listutil);
-  // listutil = manip_pa(listutil);
-  // listutil = manip_pa(listutil);
-  // print_list(listutil);
-
-  listutil = algo_sort(listutil);
-
-  printf("\n\n\nfinish\n\n");
-  print_list(listutil);
-
-    if (is_sorted_total(listutil) == true)
-    	printf("sorted good\n");
-
-    if (is_sorted_total(listutil) == false)
-    	printf("not sorted\n");
-  // out_normaly(listutil);
+    if (ac == 1)
+      return (-1);
+    if (check_init(ac, av) == false)
+    {
+        printf("Error\n");
+        return (-1);
+    }
+    listutil = init_list(ac, av);
+    if (!listutil)
+      return (fail());
+    listutil = algo_sort(listutil);
+    out_normaly(listutil);
 }

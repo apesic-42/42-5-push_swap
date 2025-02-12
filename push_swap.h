@@ -43,7 +43,7 @@ typedef struct t_listutil
 	int                 max_lenght;
 }						t_listutil;
 
-char					**check_init(int ac, char **av);
+bool					check_init(int ac, char **av);
 
 t_element				*put_list_in_struct(int ac, char **av);
 t_element				*create_element(int true_value);

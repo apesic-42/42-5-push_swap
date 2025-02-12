@@ -22,7 +22,6 @@ PUSH_SWAP_SRC =		main\
 					manipulate/manipulate_r\
 					manipulate/manipulate_rr\
 					algo/sort\
-					algo/sort_util\
 					algo/is_or_not\
 					out/out_normaly\
 					out/exit_init\
