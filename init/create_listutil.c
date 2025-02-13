@@ -36,7 +36,7 @@ t_listutil *init_list(int ac,char ** av)
     first_a = put_list_in_struct(ac, av);
     if (!first_a)
         return (NULL);
-    av = cache_sorte(ac, &av[1]);
+    av = cache_sorte(ac, av);
     listutil = create_listutil(first_a);
     if (!listutil)
     {

@@ -76,13 +76,13 @@ t_element *put_list_in_struct(int ac, char **av)
 	t_element *new_element;
 	int i;
 
-	i = 1;
+	i = 0;
 	first_a = create_element(ft_atoi(av[--ac]));
 	if (!first_a)
 		return NULL;
 	ac--;
 	temp_element = first_a;
-	while (ac > 0)
+	while (ac >= 0)
 	{
 		new_element = create_element(ft_atoi(av[ac]));
 		if (!temp_element)

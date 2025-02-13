@@ -18,6 +18,8 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
+
 
 typedef struct t_value
 {
@@ -43,7 +45,8 @@ typedef struct t_listutil
 	int                 max_lenght;
 }						t_listutil;
 
-bool					check_init(int ac, char **av);
+char					**check_init(int ac, char **av);
+int	ft_tablen(char **s);
 
 t_element				*put_list_in_struct(int ac, char **av);
 t_element				*create_element(int true_value);

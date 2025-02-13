@@ -60,11 +60,13 @@ int main(int ac, char **av)
 
     if (ac == 1)
       return (-1);
-    if (check_init(ac, av) == false)
+    av = check_init(ac, av);
+    if (av == NULL)
     {
         printf("Error\n");
         return (-1);
     }
+    ac = ft_tablen(av);
     listutil = init_list(ac, av);
     if (!listutil)
       return (fail());
