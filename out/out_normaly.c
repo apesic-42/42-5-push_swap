@@ -2,10 +2,12 @@
 
 #include "push_swap.h"
 
-static void print_value(const t_value *v) {
-  printf("          -- vrais: %d | fausse : %u\n", v->true_value,
-         v->fake_value);
+void *clean_exit_init(t_element *first)
+{
+    free_list(first);
+	return (NULL);
 }
+
 
 void free_list(t_element *head)
 {

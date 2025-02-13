@@ -23,8 +23,8 @@ PUSH_SWAP_SRC =		main\
 					manipulate/manipulate_rr\
 					algo/sort\
 					algo/is_or_not\
+					algo/sort_small\
 					out/out_normaly\
-					out/exit_init\
 
 PUSH_SWAP_DS = $(addprefix $(PUSH_SWAP_DIR)/, $(addsuffix .c, $(PUSH_SWAP_SRC)))
 OBJS = $(PUSH_SWAP_DS:.c=.o)

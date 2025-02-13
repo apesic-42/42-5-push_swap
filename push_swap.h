@@ -75,9 +75,12 @@ char **cache_sorte(int ac,char** av);
 
 t_listutil *algo_sort(t_listutil *listutil);
 bool is_sorted_total(t_listutil *listutil);
-// bool x_in_list_a(int x, int rang, t_listutil *listutil);
-// int get_cx(t_value *value, int x);
-// int zero_position(t_value *v);
+bool is_min(int fake_value, t_listutil *listutils);
+bool is_max(int fake_value, t_listutil *listutils);
+int	get_min_of_list(t_element *element, int val);
+
+
+t_listutil *algo_sort_5(t_listutil *listutil);
 
 
 void free_list(t_element *head);
