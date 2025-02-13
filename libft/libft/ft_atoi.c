@@ -10,36 +10,35 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	space(const char *n, int i)
-{
-	while (n[i] == ' ' || (n[i] >= '\t' && n[i] <= '\r'))
-		i++;
-	return (i);
-}
+# include <limits.h>
 
-int	ft_atoi(const char *n)
+
+long	ft_atoi(const char *str)
 {
-	int	i;
-	int	signe;
-	int	res;
+	long	res;
+	int		sign;
+	int		i;
 
 	i = 0;
 	res = 0;
-	signe = 1;
-	i = space(n, i);
-	if (n[i] == '-' || n[i] == '+')
-	{
-		if (n[i] == '-')
-			signe = -1;
+	sign = 1;
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 		i++;
-	}
-	while (n[i] >= '0' && n[i] <= '9')
+	if (str[i] == '-' || str[i] == '+')
+		if (str[i++] == '-')
+			sign *= -1;
+	if (!(str[i] >= '0' && str[i] <= '9'))
+		return (2147483648);
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		res *= 10;
-		res += n[i] - 48;
+		res = res * 10 + str[i] - '0';
 		i++;
+		if ((res > INT_MAX && sign == 1) || (res > (2147483648) && sign == -1))
+			return (2147483648);
 	}
-	return (res * signe);
+	if (str[i])
+		return (2147483648);
+	return (res * sign);
 }
 
 //  #include <stdlib.h>
