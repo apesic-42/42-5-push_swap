@@ -1,21 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   create_listutil.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: apesic <apesicstudent.42.fr>               +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/14 14:34:13 by apesic            #+#    #+#             */
+/*   Updated: 2025/02/14 14:34:14 by apesic           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
 
-static t_element* get_last_element(t_element *head) {
-    if (head == NULL)
-        return NULL;
-    t_element *current = head;
-    while (current->next != NULL)
-        current = current->next;
-    return (current);
+static t_element	*get_last_element(t_element *head)
+{
+	t_element	*current;
+
+	if (head == NULL)
+		return (NULL);
+	current = head;
+	while (current->next != NULL)
+		current = current->next;
+	return (current);
 }
 
-
-
-t_listutil *create_listutil(t_element *first_a)
+t_listutil	*create_listutil(t_element *first_a)
 {
-	t_listutil *new_listutil;
-
+	t_listutil	*new_listutil;
 
 	new_listutil = (t_listutil *)ft_calloc(sizeof(t_listutil), 1);
 	if (!new_listutil)
@@ -27,25 +38,22 @@ t_listutil *create_listutil(t_element *first_a)
 	return (new_listutil);
 }
 
-
-t_listutil *init_list(int ac,char ** av)
+t_listutil	*init_list(int ac, char **av)
 {
-    t_element *first_a;
-    t_listutil *listutil;
+	t_element	*first_a;
+	t_listutil	*listutil;
 
-    first_a = put_list_in_struct(ac, av);
-    if (!first_a)
-        return (NULL);
-    av = cache_sorte(ac, av);
-    listutil = create_listutil(first_a);
-    if (!listutil)
-    {
-        free_list(first_a);
-        return (NULL);
-    }
-    listutil = link_cachliste_and_linked_list(listutil, av);
-    listutil = get_max_lenght(listutil);
-
-    return (listutil);
-
+	first_a = put_list_in_struct(ac, av);
+	if (!first_a)
+		return (NULL);
+	av = cache_sorte(ac, av);
+	listutil = create_listutil(first_a);
+	if (!listutil)
+	{
+		free_list(first_a);
+		return (NULL);
+	}
+	listutil = link_cachliste_and_linked_list(listutil, av);
+	listutil = get_max_lenght(listutil);
+	return (listutil);
 }

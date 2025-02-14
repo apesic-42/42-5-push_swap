@@ -1,58 +1,65 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   is_or_not.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: apesic <apesicstudent.42.fr>               +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/14 14:42:03 by apesic            #+#    #+#             */
+/*   Updated: 2025/02/14 14:42:05 by apesic           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-
-
-bool is_sorted_total(t_listutil *listutil)
+bool	is_sorted_total(t_listutil *listutil)
 {
-	t_element *current;
+	t_element	*current;
 
 	if (listutil->sizeb != 0 || listutil->sizea == 0)
 		return (false);
 	current = listutil->taila;
-    while (current->prev != NULL)
+	while (current->prev != NULL)
 	{
-        if (current->value->fake_value > current->prev->value->fake_value)
-            return (false);
-        current = current->prev;
-    }
+		if (current->value->fake_value > current->prev->value->fake_value)
+			return (false);
+		current = current->prev;
+	}
 	return (true);
 }
 
-bool is_min(int fake_value, t_listutil *listutils)
+bool	is_min(int fake_value, t_listutil *listutils)
 {
-    t_element *cur;
+	t_element	*cur;
 
-    cur = listutils->heada;
-    while (cur)
-    {
-        if (cur->value->fake_value < fake_value)
-            return (false);
-        cur = cur->next;
-    }
-    return (true);
+	cur = listutils->heada;
+	while (cur)
+	{
+		if (cur->value->fake_value < fake_value)
+			return (false);
+		cur = cur->next;
+	}
+	return (true);
 }
 
-bool is_max(int fake_value, t_listutil *listutils)
+bool	is_max(int fake_value, t_listutil *listutils)
 {
-    t_element *cur;
+	t_element	*cur;
 
-    cur = listutils->heada;
-    while (cur)
-    {
-        if (cur->value->fake_value > fake_value)
-            return (false);
-        cur = cur->next;
-    }
-    return (true);
+	cur = listutils->heada;
+	while (cur)
+	{
+		if (cur->value->fake_value > fake_value)
+			return (false);
+		cur = cur->next;
+	}
+	return (true);
 }
-
 
 int	get_min_of_list(t_element *element, int val)
 {
-    t_element *cur;
-	int		min;
+	t_element	*cur;
+	int			min;
 
 	cur = element;
 	min = cur->value->fake_value;
@@ -60,7 +67,7 @@ int	get_min_of_list(t_element *element, int val)
 	{
 		cur = cur->prev;
 		if ((cur->value->fake_value < min) && cur->value->fake_value != val)
-		min = cur->value->fake_value;
+			min = cur->value->fake_value;
 	}
 	return (min);
 }

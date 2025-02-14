@@ -14,17 +14,16 @@
 # define PUSH_SWAP_H
 
 # include "./libft/printf/ft_printf.h"
+# include <limits.h>
 # include <stdbool.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <limits.h>
-
 
 typedef struct t_value
 {
-    int true_value;
-    unsigned int fake_value;
+	int					true_value;
+	unsigned int		fake_value;
 }						t_value;
 
 typedef struct t_element
@@ -42,58 +41,49 @@ typedef struct t_listutil
 	t_element			*headb;
 	t_element			*tailb;
 	int					sizeb;
-	int                 max_lenght;
+	int					max_lenght;
 }						t_listutil;
 
 char					**check_init(int ac, char **av);
-int	ft_tablen(char **s);
+int						ft_tablen(char **s);
 
 t_element				*put_list_in_struct(int ac, char **av);
 t_element				*create_element(int true_value);
-t_value *create_value(int true_value);
-char 					*nb_to_0(char *nb);
+t_value					*create_value(int true_value);
+char					*nb_to_0(char *nb);
 t_listutil				*create_listutil(t_element *first_a);
-t_listutil              *init_list(int ac,char ** av);
-t_listutil              *link_cachliste_and_linked_list(t_listutil *listutil, char **av);
-t_listutil              *get_max_lenght(t_listutil *listutil);
-
+t_listutil				*init_list(int ac, char **av);
+t_listutil				*link_cachliste_and_linked_list(t_listutil *listutil,
+							char **av);
+t_listutil				*get_max_lenght(t_listutil *listutil);
 
 size_t					get_size(t_element *first);
-t_element *get_next_l(t_element *element);
-t_element *get_prev_l(t_element *element);
+t_element				*get_next_l(t_element *element);
+t_element				*get_prev_l(t_element *element);
 
-t_listutil *manip_sa(t_listutil *listutil);
-t_listutil *manip_sb(t_listutil *listutil);
-t_listutil *manip_ss(t_listutil *listutil);
-t_listutil *manip_pb(t_listutil *listutil);
-t_listutil *manip_pa(t_listutil *listutil);
-t_listutil *manip_ra(t_listutil *listutil);
-t_listutil 	*manip_rb(t_listutil *listutil);
-t_listutil 	*manip_rr(t_listutil *listutil);
-t_listutil 	*manip_rra(t_listutil *listutil);
-t_listutil 	*manip_rrb(t_listutil *listutil);
+t_listutil				*manip_sa(t_listutil *listutil);
+t_listutil				*manip_sb(t_listutil *listutil);
+t_listutil				*manip_ss(t_listutil *listutil);
+t_listutil				*manip_pb(t_listutil *listutil);
+t_listutil				*manip_pa(t_listutil *listutil);
+t_listutil				*manip_ra(t_listutil *listutil);
+t_listutil				*manip_rb(t_listutil *listutil);
+t_listutil				*manip_rr(t_listutil *listutil);
+t_listutil				*manip_rra(t_listutil *listutil);
+t_listutil				*manip_rrb(t_listutil *listutil);
 
+char					**cache_sorte(int ac, char **av);
 
-char **cache_sorte(int ac,char** av);
+t_listutil				*algo_sort(t_listutil *listutil);
+bool					is_sorted_total(t_listutil *listutil);
+bool					is_min(int fake_value, t_listutil *listutils);
+bool					is_max(int fake_value, t_listutil *listutils);
+int						get_min_of_list(t_element *element, int val);
 
-t_listutil *algo_sort(t_listutil *listutil);
-bool is_sorted_total(t_listutil *listutil);
-bool is_min(int fake_value, t_listutil *listutils);
-bool is_max(int fake_value, t_listutil *listutils);
-int	get_min_of_list(t_element *element, int val);
+t_listutil				*algo_sort_5(t_listutil *listutil);
 
-
-t_listutil *algo_sort_5(t_listutil *listutil);
-
-
-void free_list(t_element *head);
-void out_normaly(t_listutil *listutil);
-void *clean_exit_init(t_element *first);
-
-
-
-
-
-
+void					free_list(t_element *head);
+void					out_normaly(t_listutil *listutil);
+void					*clean_exit_init(t_element *first);
 
 #endif // FT_H

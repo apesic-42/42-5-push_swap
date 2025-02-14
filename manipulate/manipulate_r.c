@@ -1,13 +1,22 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   manipulate_r.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: apesic <apesicstudent.42.fr>               +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/14 14:29:57 by apesic            #+#    #+#             */
+/*   Updated: 2025/02/14 14:29:59 by apesic           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-t_listutil 	*manip_ra(t_listutil *listutil)
+t_listutil	*manip_ra(t_listutil *listutil)
 {
-	t_element *last_a;
-	t_element *first_a;
-	t_element *temp;
+	t_element	*last_a;
+	t_element	*first_a;
+	t_element	*temp;
 
 	ft_printf("ra\n");
 	last_a = listutil->taila;
@@ -20,17 +29,16 @@ t_listutil 	*manip_ra(t_listutil *listutil)
 		first_a->prev = last_a;
 		temp->next = NULL;
 		listutil->heada = last_a;
-		listutil->taila= temp;
+		listutil->taila = temp;
 	}
 	return (listutil);
 }
 
-
-t_listutil 	*manip_rb(t_listutil *listutil)
+t_listutil	*manip_rb(t_listutil *listutil)
 {
-	t_element *last_b;
-	t_element *first_b;
-	t_element *temp;
+	t_element	*last_b;
+	t_element	*first_b;
+	t_element	*temp;
 
 	ft_printf("rb\n");
 	last_b = listutil->tailb;
@@ -43,13 +51,12 @@ t_listutil 	*manip_rb(t_listutil *listutil)
 		first_b->prev = last_b;
 		temp->next = NULL;
 		listutil->headb = last_b;
-		listutil->tailb= temp;
+		listutil->tailb = temp;
 	}
 	return (listutil);
 }
 
-
-t_listutil 	*manip_rr(t_listutil *listutil)
+t_listutil	*manip_rr(t_listutil *listutil)
 {
 	manip_ra(listutil);
 	manip_rb(listutil);

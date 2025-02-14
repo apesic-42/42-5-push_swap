@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <limits.h>
-
+#include <limits.h>
 
 long	ft_atoi(const char *str)
 {

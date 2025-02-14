@@ -1,85 +1,93 @@
-
-
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   transform_init.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: apesic <apesicstudent.42.fr>               +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/14 14:34:29 by apesic            #+#    #+#             */
+/*   Updated: 2025/02/14 14:34:30 by apesic           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-
-static bool is_sorted_total_av(int ac,char** av)
+static bool	is_sorted_total_av(int ac, char **av)
 {
-    char *current;
+	char	*current;
 
 	current = av[ac];
-    while (ac > 0)
+	while (ac > 0)
 	{
-        if (ft_atoi(av[ac]) < ft_atoi(av[ac - 1]))
-            return (false);
-        ac--;
-    }
+		if (ft_atoi(av[ac]) < ft_atoi(av[ac - 1]))
+			return (false);
+		ac--;
+	}
 	return (true);
 }
 
-static char *get_min(int ac, char**av)
+static char	*get_min(int ac, char **av)
 {
-    char * st;
-    st  = av[ac--];
-    while (ac > 0)
-    {
-        if (ft_atoi(st) > ft_atoi(av[ac]))
-            st = av[ac];
-        ac--;
-    }
-    return (st);
+	char	*st;
+
+	st = av[ac--];
+	while (ac > 0)
+	{
+		if (ft_atoi(st) > ft_atoi(av[ac]))
+			st = av[ac];
+		ac--;
+	}
+	return (st);
 }
 
-
-char **cache_sorte(int ac, char **liste)
+static int	get_s(char **liste)
 {
-    int i;
-    int j;
-    int size;
-    char *temp;
-    (void)ac;
+	int	size;
 
-    // Get the size of the array (assuming it's NULL-terminated)
-    size = 0;
-    while (liste[size] != NULL)
-        size++;
-
-
-    i = 0;
-    while(i < size + 1)
-    {
-        j = 0;
-        while(j < size - i - 1)
-        {
-            // Convert strings to integers for comparison
-            if (ft_atoi(liste[j]) > ft_atoi(liste[j + 1]))
-            {
-                // Swap the strings
-                temp = liste[j];
-                liste[j] = liste[j + 1];
-                liste[j + 1] = temp;
-            }
-            j++;
-        }
-        i++;
-    }
-    return (liste);
+	size = 0;
+	while (liste[size] != NULL)
+		size++;
+	return (size);
 }
 
-t_element *put_list_in_struct(int ac, char **av)
+char	**cache_sorte(int ac, char **liste)
 {
-    t_element *first_a;
-	t_element *temp_element;
-	t_element *new_element;
-	int i;
+	int		i;
+	int		j;
+	int		size;
+	char	*temp;
+
+	(void)ac;
+	size = get_s(liste);
+	while (i < size + 1)
+	{
+		j = 0;
+		while (j < size - i - 1)
+		{
+			if (ft_atoi(liste[j]) > ft_atoi(liste[j + 1]))
+			{
+				temp = liste[j];
+				liste[j] = liste[j + 1];
+				liste[j + 1] = temp;
+			}
+			j++;
+		}
+		i++;
+	}
+	return (liste);
+}
+
+t_element	*put_list_in_struct(int ac, char **av)
+{
+	t_element	*first_a;
+	t_element	*temp_element;
+	t_element	*new_element;
+	int			i;
 
 	i = 0;
 	first_a = create_element(ft_atoi(av[--ac]));
 	if (!first_a)
-		return NULL;
+		return (NULL);
 	ac--;
 	temp_element = first_a;
 	while (ac >= 0)
