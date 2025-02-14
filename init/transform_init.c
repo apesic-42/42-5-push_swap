@@ -54,15 +54,16 @@ char	**cache_sorte(int ac, char **liste)
 {
 	int		i;
 	int		j;
-	int		size;
 	char	*temp;
 
-	(void)ac;
-	size = get_s(liste);
-	while (i < size + 1)
+	ac = 0;
+	while (liste[ac] != NULL)
+		ac++;
+	i = 0;
+	while (i < ac + 1)
 	{
 		j = 0;
-		while (j < size - i - 1)
+		while (j < ac - i - 1)
 		{
 			if (ft_atoi(liste[j]) > ft_atoi(liste[j + 1]))
 			{
